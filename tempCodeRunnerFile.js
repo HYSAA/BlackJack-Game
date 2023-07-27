@@ -1,28 +1,31 @@
-let firstCard = Math.floor(Math.random() * 9) + 3;
 
-
-let secondCard=Math.floor(Math.random()*9)+3;
-
+let firstCard = Math.floor(Math.random() * 9) + 5;
+let secondCard=Math.floor(Math.random()*9)+5;
 let sum = firstCard+secondCard;
-
+let hasBlack=false;
+let isAlive=true;
+let message="";
 console.log(sum)
 
+
 function jack(){
-if(sum>21)
+if(sum>=21) //greater than
 {
-    console.log("you lose")
+    message="you lose"
+    isAlive=false;
+
 }
 else if(sum===21){
-    console.log("hooray you win");
+    message="hooray you win";
+    hasBlack=true;
+
 }
 else{
-    (sum<21)
-    console.log("you are still playing")
-
-    
-}
-
-
+    (sum<=21)//less than
+    message="you are still playing"
 
 }
+}
+
 jack()
+console.log(message)
