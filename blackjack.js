@@ -34,6 +34,7 @@ else{
 
 }
 //display the contents
+//concatinating displays
 messageEl.textContent=message;//para mo display ang messages sa html
 firstCardEL.textContent="First Card:"+firstCard;//display sa first card
 secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
