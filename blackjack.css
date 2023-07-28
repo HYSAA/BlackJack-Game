@@ -1,0 +1,40 @@
+h1{
+    color: goldenrod;
+   border-color: black;
+   font-size: 50px;
+   line-height: 1.5;
+}
+
+.MENU{
+
+    text-align: center;
+    margin-top: 10%;
+    padding: 0px;
+}
+.message-el{
+
+    font-style: italic;
+}
+body {
+    background-image: url("https://img.freepik.com/free-photo/abstract-blur-empty-green-gradient-studio-well-use-as-background-website-template-frame-business-report_1258-54629.jpg?w=740&t=st=1690459985~exp=1690460585~hmac=d58cce8a1bf4ab73e96d16348542320f2809c7fa456111b60298125fd2fa3c20");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    font-weight: bold;
+  }
+  button{
+    background-color: yellow;
+    color: green;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  }

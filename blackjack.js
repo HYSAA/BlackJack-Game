@@ -1,18 +1,23 @@
-// 1. Create two variables, firstCard and secondCard. 
-// Set their values to a random number between 2-11
-
-// 2. Create a variable, sum, and set it to the sum of the two cards
-
 let firstCard = Math.floor(Math.random() * 9) + 5;
 let secondCard=Math.floor(Math.random()*9)+5;
-let sum = firstCard+secondCard;
+let sum=document.getElementById("sum");
+let messageEl=document.getElementById("message-el")
+sum= firstCard+secondCard;
 let hasBlack=false;
 let isAlive=true;
 let message="";
 console.log(sum)
 
+// function startGame(){
 
-function jack(){
+
+// }
+
+
+sum.textContent=sum;
+console.log(sum)
+
+function startGame(){
 if(sum>=21) //greater than
 {
     message="you lose"
@@ -29,43 +34,18 @@ else{
     message="you are still playing"
 
 }
+messageEl.textContent=message;
 }
 
-jack()
-console.log(message)
 
-
-console.log(4 === 3)  // false
-console.log(5 > 2)    // true
-console.log(12 > 12)  //false
-console.log(3 < 0)    //false
-console.log(3 >= 3)   // true
-console.log(11 <= 11) //true
-console.log(3 <= 2)   //false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(4 === 3)  // false
+// console.log(5 > 2)    // true
+// console.log(12 > 12)  //false
+// console.log(3 < 0)    //false
+// console.log(3 >= 3)   // true
+// console.log(11 <= 11) //true
+// console.log(3 <= 2)   //false
 // }
-
-
 // jack()
 // Check if the person is old enough to enter the nightclub (21)
 // Log a suitable message to the console in both cases
