@@ -1,40 +1,44 @@
-let firstCard = Math.floor(Math.random() * 9) + 5;
-let secondCard=Math.floor(Math.random()*9)+5;
+let firstCardEL=document.getElementById("firstcard")
+let secondCardEL=document.getElementById("secondcard");
 let sum=document.getElementById("sum");
 let messageEl=document.getElementById("message-el")
-sum= firstCard+secondCard;
+
+
+let firstCard = Math.floor(Math.random() * 9) + 5;
+let secondCard=Math.floor(Math.random()*9)+5;
 let hasBlack=false;
 let isAlive=true;
 let message="";
-console.log(sum)
+let totalSum=firstCard+secondCard;
 
-// function startGame(){
+sum.textContent="Sum:"+ totalSum;
+
+// firstCardEL.textContent=firstCard;
+// secondCardEL.textContent=secondCard;
 
 
-// }
 
-
-sum.textContent=sum;
-console.log(sum)
 
 function startGame(){
 if(sum>=21) //greater than
 {
-    message="you lose"
+    message="You're out of the game!"
     isAlive=false;
 
 }
 else if(sum===21){
-    message="hooray you win";
+    message="Wohoo! You've got Blackjack!"
     hasBlack=true;
 
 }
 else{
-    (sum<=21)//less than
-    message="you are still playing"
+    (sum<=20)//less than
+    message="Do you want to draw a new card? "
 
 }
 messageEl.textContent=message;
+firstCardEL.textContent=firstCard;
+secondCardEL.textContent=secondCard;
 }
 
 
