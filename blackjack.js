@@ -9,14 +9,15 @@ let cardEl= document.getElementById("cards")
 //setting up variables
 let firstCard = Math.floor(Math.random() * 9) +3;
 let secondCard=Math.floor(Math.random()*9)+3;
-// let thirdCard=Math.floor(Math.random()*9)+3;
+let thirdCard=Math.floor(Math.random()*9)+3;
 
-let cards=[firstCard,secondCard]
+let cards=[firstCard,secondCard,thirdCard]
 
 let hasBlack=false;//testing if bolean ba siya 
 let isAlive=true;
 let message="";
 let sum= firstCard+secondCard
+thirdCard=sum+thirdCard
 
 
 function startGame(){
@@ -25,7 +26,7 @@ function startGame(){
 
 
 function renderGame(){
-cardEl.textContent="Cards:" + cards[0]+ " " +cards[1];
+cardEl.textContent="Cards:" + cards[0]+ " " +cards[1],+" " +cards[2];
 sumEl.textContent="Sum:"+sum;
 if(sum>21) //greater than
 {
@@ -48,8 +49,8 @@ else{
 //display the contents
 //concatinating displays
 messageEl.textContent=message;//para mo display ang messages sa html
-firstCardEL.textContent="First Card:"+firstCard;//display sa first card
-secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
+// firstCardEL.textContent="First Card:"+firstCard;//display sa first card
+// secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
 // thirdCardEl.textContent="Third Card:"+ thirdCard;
 
 }
