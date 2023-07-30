@@ -1,31 +1,43 @@
 //document connecting to html
-let firstCardEL=document.getElementById("firstcard")
-let secondCardEL=document.getElementById("secondcard");
-let sumEl=document.querySelector("#sum");
+// let firstCardEL=document.getElementById("firstcard")
+// let secondCardEL=document.getElementById("secondcard");
+// let thirdCardEl=document.getElementById("thirdcard")
+let sumEl=document.getElementById("sum");
 let messageEl=document.getElementById("message-el")
+let cardEl= document.getElementById("cards")
 
 //setting up variables
 let firstCard = Math.floor(Math.random() * 9) +3;
 let secondCard=Math.floor(Math.random()*9)+3;
+// let thirdCard=Math.floor(Math.random()*9)+3;
+
+let cards=[firstCard,secondCard]
+
 let hasBlack=false;//testing if bolean ba siya 
 let isAlive=true;
 let message="";
-// let totalSum=firstCard+secondCard;
 let sum= firstCard+secondCard
 
-// sum.textContent="Sum:"+sum;
+
+function startGame(){
+    renderGame();
+}
+
+
 function renderGame(){
+cardEl.textContent="Cards:" + cards[0]+ " " +cards[1];
+sumEl.textContent="Sum:"+sum;
 if(sum>21) //greater than
 {
     message="You're out of the game!"
     isAlive=false;
-    // console.log(isAlive)
+  
 
 }
 else if(sum===21){
     message="Wohoo! You've got Blackjack!"
     hasBlack=true;
-    // console.log(hasBlack)
+
 
 }
 else{
@@ -38,27 +50,15 @@ else{
 messageEl.textContent=message;//para mo display ang messages sa html
 firstCardEL.textContent="First Card:"+firstCard;//display sa first card
 secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
-sumEl.textContent="Sum:"+sum;
+// thirdCardEl.textContent="Third Card:"+ thirdCard;
+
 }
 
 function newCard(){
     let card=Math.floor(Math.random()*9)+1;
-
     console.log(card);
-    message="Drawing a new card from the deck";
-    messageEl.textContent=message;
-    firstCardEL.textContent="First Card:"+firstCard;//display sa first card
-   secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
-    sumEl.textContent="Sum:"+sum;
     sum+=card;
-
-    if(sum>21){
-        message="game over"
-    }
-    else if(sum<21){
-        renderGame();
-
-    }
+    renderGame();
     
     
 }
