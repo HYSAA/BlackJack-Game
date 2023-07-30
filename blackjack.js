@@ -1,31 +1,31 @@
 //document connecting to html
 let firstCardEL=document.getElementById("firstcard")
 let secondCardEL=document.getElementById("secondcard");
-let sum=document.getElementById("sum");
+let sumEl=document.querySelector("#sum");
 let messageEl=document.getElementById("message-el")
 
 //setting up variables
-let firstCard = Math.floor(Math.random() * 9) + 5;
-let secondCard=Math.floor(Math.random()*9)+5;
+let firstCard = Math.floor(Math.random() * 9) +3;
+let secondCard=Math.floor(Math.random()*9)+3;
 let hasBlack=false;//testing if bolean ba siya 
 let isAlive=true;
 let message="";
-let totalSum=firstCard+secondCard;
+// let totalSum=firstCard+secondCard;
+let sum= firstCard+secondCard
 
-
-
-function startGame(){
-if(sum>=21) //greater than
+// sum.textContent="Sum:"+sum;
+function renderGame(){
+if(sum>21) //greater than
 {
     message="You're out of the game!"
     isAlive=false;
-    console.log(isAlive)
+    // console.log(isAlive)
 
 }
 else if(sum===21){
     message="Wohoo! You've got Blackjack!"
     hasBlack=true;
-    console.log(hasBlack)
+    // console.log(hasBlack)
 
 }
 else{
@@ -38,8 +38,75 @@ else{
 messageEl.textContent=message;//para mo display ang messages sa html
 firstCardEL.textContent="First Card:"+firstCard;//display sa first card
 secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
-sum.textContent="Sum:"+totalSum;
+sumEl.textContent="Sum:"+sum;
 }
+
+function newCard(){
+    let card=Math.floor(Math.random()*9)+1;
+
+    console.log(card);
+    message="Drawing a new card from the deck";
+    messageEl.textContent=message;
+    firstCardEL.textContent="First Card:"+firstCard;//display sa first card
+   secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
+    sumEl.textContent="Sum:"+sum;
+    sum+=card;
+
+    if(sum>21){
+        message="game over"
+    }
+    else if(sum<21){
+        renderGame();
+
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // console.log(4 === 3)  // false
