@@ -2,66 +2,69 @@
 // let firstCardEL=document.getElementById("firstcard")
 // let secondCardEL=document.getElementById("secondcard");
 // let thirdCardEl=document.getElementById("thirdcard")
-let sumEl=document.getElementById("sum");
-let messageEl=document.getElementById("message-el")
-let cardEl= document.getElementById("cards")
+let sumEl = document.getElementById("sum");
+let messageEl = document.getElementById("message-el")
+let cardEl = document.getElementById("cards")
 
 //setting up variables
-let firstCard = Math.floor(Math.random() * 9) +3;
-let secondCard=Math.floor(Math.random()*9)+3;
-let thirdCard=Math.floor(Math.random()*9)+3;
+let firstCard = Math.floor(Math.random() * 9) + 3;
+let secondCard = Math.floor(Math.random() * 9) + 3;
+let thirdCard = Math.floor(Math.random() * 9) + 3;
 
-let cards=[firstCard,secondCard,thirdCard]
+let cards = [firstCard, secondCard, thirdCard]
 
-let hasBlack=false;//testing if bolean ba siya 
-let isAlive=true;
-let message="";
-let sum= firstCard+secondCard
-thirdCard=sum+thirdCard
+let hasBlack = false;
+let isAlive = true;
+let message = "";
+let sum = firstCard + secondCard
+thirdCard = sum + thirdCard
 
 
-function startGame(){
+function startGame() {
     renderGame();
 }
 
 
-function renderGame(){
-cardEl.textContent="Cards:" + cards[0]+ " " +cards[1],+" " +cards[2];
-sumEl.textContent="Sum:"+sum;
-if(sum>21) //greater than
-{
-    message="You're out of the game!"
-    isAlive=false;
-  
+function renderGame() {
+    cardEl.textContent = "Cards:" + cards[0] + " " + cards[1] + " " 
+
+    console.log(cards)
+    sumEl.textContent = "Sum:" + sum;
+    if (sum > 21) //greater than
+    {
+        message = "You're out of the game!"
+        isAlive = false;
+
+
+    }
+    else if (sum === 21) {
+        message = "Wohoo! You've got Blackjack!"
+        hasBlack = true;
+
+
+    }
+    else {
+        (sum <= 20)//less than
+        message = "Do you want to draw a new card? "
+
+    }
+    //display the contents
+    //concatinating displays
+    messageEl.textContent = message;
+    //para mo display ang messages sa html
+    // firstCardEL.textContent="First Card:"+firstCard;//display sa first card
+    // secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
+    // thirdCardEl.textContent="Third Card:"+ thirdCard;
 
 }
-else if(sum===21){
-    message="Wohoo! You've got Blackjack!"
-    hasBlack=true;
 
+function newCard() {
 
-}
-else{
-    (sum<=20)//less than
-    message="Do you want to draw a new card? "
+    let card = Math.floor(Math.random() * 9) + 1;
+    sum += card;
 
-}
-//display the contents
-//concatinating displays
-messageEl.textContent=message;//para mo display ang messages sa html
-// firstCardEL.textContent="First Card:"+firstCard;//display sa first card
-// secondCardEL.textContent="Second Card:"+secondCard;//display sa second card
-// thirdCardEl.textContent="Third Card:"+ thirdCard;
-
-}
-
-function newCard(){
-    let card=Math.floor(Math.random()*9)+1;
-    console.log(card);
-    sum+=card;
-    renderGame();
-    
-    
+    cardEl.textContent = thirdCard;
+    startGame();
 }
 
 
