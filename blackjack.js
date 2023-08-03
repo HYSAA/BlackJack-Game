@@ -12,7 +12,7 @@ let secondCard = Math.floor(Math.random() * 9) + 3;
 let thirdCard = Math.floor(Math.random() * 9) + 3;
 
 let cards = [firstCard, secondCard, thirdCard]
-
+// cardEl.textContent.push(thirdCard)
 let hasBlack = false;
 let isAlive = true;
 let message = "";
@@ -26,8 +26,8 @@ function startGame() {
 
 
 function renderGame() {
-    cardEl.textContent = "Cards:" + cards[0] + " " + cards[1] + " " 
-
+    cardEl.textContent = "Cards:" + cards[0] + " " + cards[1] + " "+ cards[2]; 
+    cards.push[thirdCard]
     console.log(cards)
     sumEl.textContent = "Sum:" + sum;
     if (sum > 21) //greater than
