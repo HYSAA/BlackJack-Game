@@ -27,7 +27,7 @@ function startGame() {
 
 function renderGame() {
     cardEl.textContent = "Cards:" + cards[0] + " " + cards[1] + " "+ cards[2]; 
-    cards.push[thirdCard]
+
     console.log(cards)
     sumEl.textContent = "Sum:" + sum;
     if (sum > 21) //greater than
@@ -61,7 +61,8 @@ function renderGame() {
 function newCard() {
     let card = Math.floor(Math.random() * 9) + 1;
     sum += card;
-    cardEl.textContent = thirdCard;
+    cards.push(card)
+    console.log(cards)
     startGame();
 
 }
