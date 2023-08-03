@@ -59,7 +59,7 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = Math.floor(Math.random() * 9) + 1;
+    let card = Math.floor(Math.random() * 9) + 1;           
     sum += card;
     cards.push(card)
     console.log(cards)
