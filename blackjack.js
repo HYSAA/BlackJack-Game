@@ -23,9 +23,21 @@ let message = "";
 let sum = firstCard + secondCard
 thirdCard += sum;
 function getRandomCard() {
+    let randomCard= Math.floor(Math.random() * 13) + 1;
+    if(randomCard>10){
+        return 10;
+    }else if(randomCard===1){
+        return 11;
+    }else{
+        return randomCard;
+    }
 
-    return Math.floor(Math.random() * 9) + 3;
-
+   
+    // if(cards==1){
+    //     return 11;
+    //  }else if(cards==11 || cards==13){
+    //     return 10;
+    //  }
 }
 
 
