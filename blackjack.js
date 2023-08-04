@@ -7,9 +7,13 @@ let messageEl = document.getElementById("message-el")
 let cardEl = document.getElementById("cards")
 
 //setting up variables
-let firstCard = Math.floor(Math.random() * 9) + 3;
-let secondCard = Math.floor(Math.random() * 9) + 3;
-let thirdCard = Math.floor(Math.random() * 9) + 3;
+// let firstCard = Math.floor(Math.random() * 9) + 3;
+// let secondCard = Math.floor(Math.random() * 9) + 3;
+// let thirdCard = Math.floor(Math.random() * 9) + 3;
+
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
+let thirdCard = getRandomCard()
 
 let cards = [firstCard, secondCard, thirdCard]
 // cardEl.textContent.push(thirdCard)
@@ -17,7 +21,12 @@ let hasBlack = false;
 let isAlive = true;
 let message = "";
 let sum = firstCard + secondCard
-thirdCard = sum + thirdCard
+thirdCard+=sum;
+function getRandomCard(){
+        
+    return Math.floor(Math.random()*9)+3;
+
+} 
 
 
 function startGame() {
@@ -33,7 +42,6 @@ function renderGame() {
         cardEl.textContent+=cards[i]+ " ";
        
     }
- 
     sumEl.textContent = "Sum:" + sum;
     if (sum > 21) //greater than
     {
