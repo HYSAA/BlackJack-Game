@@ -21,12 +21,12 @@ let hasBlack = false;
 let isAlive = true;
 let message = "";
 let sum = firstCard + secondCard
-thirdCard+=sum;
-function getRandomCard(){
-        
-    return Math.floor(Math.random()*9)+3;
+thirdCard += sum;
+function getRandomCard() {
 
-} 
+    return Math.floor(Math.random() * 9) + 3;
+
+}
 
 
 function startGame() {
@@ -36,11 +36,10 @@ function startGame() {
 
 function renderGame() {
     cardEl.textContent = "Cards:";
- // Create a for loop that renders out all the cards instead of just two
-    for(let i=0;i < cards.length;i++)
-    {
-        cardEl.textContent+=cards[i]+ " ";
-       
+    // Create a for loop that renders out all the cards instead of just two
+    for (let i = 0; i < cards.length; i++) {
+        cardEl.textContent += cards[i] + " ";
+
     }
     sumEl.textContent = "Sum:" + sum;
     if (sum > 21) //greater than
@@ -72,7 +71,7 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = getRandomCard()       
+    let card = getRandomCard()
     sum += card;
     cards.push(card)
     console.log(cards)
