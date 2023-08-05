@@ -20,11 +20,11 @@ function getRandomCard() {
 
 
 function startGame() {
-    isAlive = true
-   let firstCard = getRandomCard()
-   let secondCard = getRandomCard()
-   cards=[firstCard,secondCard]
-    sum=firstCard+secondCard;
+ let firstCard=Math.floor(Math.random()*13)+1
+ let secondCard=Math.floor(Math.random()*13)+1
+ cards=[firstCard,secondCard]
+ sum=firstCard+secondCard
+
     renderGame();
 }
 
@@ -59,8 +59,6 @@ function newCard() {
     cards.push(card)
     renderGame();
 }
-
-
 
 
 
