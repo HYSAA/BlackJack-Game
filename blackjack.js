@@ -24,7 +24,6 @@ function startGame() {
  let secondCard=Math.floor(Math.random()*13)+1
  cards=[firstCard,secondCard]
  sum=firstCard+secondCard
-
     renderGame();
 }
 
