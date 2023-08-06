@@ -3,27 +3,28 @@ let messageEl = document.getElementById("message-el")
 let cardEl = document.getElementById("cards")
 let cards = []
 let hasBlack = false;
-let isAlive = false;
+let isAlive = true;
 let message = "";
-let sum=0;
+let sum = 0;
 console.log(cards)
+
 function getRandomCard() {
-    let randomCard= Math.floor(Math.random() * 13) + 1;
-    if(randomCard>10){
+    let randomCard = Math.floor(Math.random() * 13) + 1;
+    if (randomCard > 10) {
         return 10;
-    }else if(randomCard===1){
+    } else if (randomCard === 1) {
         return 11;
-    }else{
+    } else {
         return randomCard;
     }
 }
 
 
 function startGame() {
- let firstCard=Math.floor(Math.random()*13)+1
- let secondCard=Math.floor(Math.random()*13)+1
- cards=[firstCard,secondCard]
- sum=firstCard+secondCard
+    let firstCard = Math.floor(Math.random() * 13) + 1
+    let secondCard = Math.floor(Math.random() * 13) + 1
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
     renderGame();
     console.log(sum)
 }
@@ -39,25 +40,28 @@ function renderGame() {
     if (sum <= 20) //greater than
     {
         message = "Do you want to draw a new card?"
-     
+             
     }
     else if (sum === 21) {
         message = "Wohoo! You've got Blackjack!"
-        hasBlack=true
+        hasBlack = true
     }
     else {
-    
+
         message = "You're out of the game "
-         isAlive=false
+        isAlive = false
     }
     messageEl.textContent = message;
 }
 
 function newCard() {
-    let card = getRandomCard()
-    sum += card;
-    cards.push(card)
-    renderGame();
+ // Only allow the player to get a new card if she IS alive and does NOT have Blackjack
+     if(isAlive==true&&hasBlack==false){
+        let card = getRandomCard()
+        sum += card;
+        cards.push(card)
+        renderGame();
+    }
 }
 
 
