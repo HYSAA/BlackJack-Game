@@ -38,3 +38,10 @@ body {
   border: none;
   border-radius: 2px;
   }
+.player{
+  display: flex;
+  align-items: bottom;
+  text-align: center;
+  justify-content: center;
+  margin: 10vh;
+}

@@ -1,7 +1,13 @@
 let sumEl = document.getElementById("sum");
 let messageEl = document.getElementById("message-el")
 let cardEl = document.getElementById("cards")
+let playerEl=document.getElementById("player-el")
 let cards = []
+let player={
+    Name:"Aj",
+    Chips:100
+}
+playerEl.textContent=player.Name + " :$"+ player.Chips
 let hasBlack = false;
 let isAlive = true;
 let message = "";
@@ -63,9 +69,6 @@ function newCard() {
         renderGame();
     }
 }
-
-
-
 
 
 
