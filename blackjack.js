@@ -24,6 +24,12 @@ function getRandomCard() {
         return randomCard;
     }
 }
+function changeStats(){
+   if(player.Name){
+    
+   }
+
+}
 
 
 function startGame() {
